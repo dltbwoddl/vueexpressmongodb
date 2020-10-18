@@ -13,3 +13,20 @@ pages/login/index.vue의 <b-form @submit="onSubmit">를 사용하면 페이지�
 b-container 태그 안에 있는 것들은 양쪽에 마진이 생긴다.
 
 class="mt-4"은 margin top을 줄인 bootstarp 코드이다.
+
+<backend>
+<회원 가입 구현하기.>
+fontend에서 post 방식으로 넘어온 email, password, name받으면(bodyparser사용)
+backend에서 몽고디비에 접속해 해당 email이 있나 체크하기.(mongoose사용)
+없으면 몽고디비에 세가지 데이터를 스키마를 이용해 기록한다.(mongoose사용)
+위의 작업이 다 끝나고 나면 res로 회원가입성공을 보내주고 다음페이지로 넘겨준다.
+
+postman을 통해 post,get등의 요청을 임의로 할 수 있다.
+
+req.body를 사용하기 위해서는 bodyparser를 사용해야 한다.
+post에서 body에 담겨온 것을 사용하기 쉽다.
+
+mongoose는 몽고 디비와 연결해주는 패키지이다.
+mongoose는 스키마를 만들어 줄 수 있다.
+스키마란 데이터베이스의 구조와 제약조건에 관한 전반적인 명세서라고 볼 수 있다.
+kotlin의 데이터 클래스라고 볼 수 있다.
