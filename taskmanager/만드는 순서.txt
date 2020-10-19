@@ -30,3 +30,19 @@ mongoose는 몽고 디비와 연결해주는 패키지이다.
 mongoose는 스키마를 만들어 줄 수 있다.
 스키마란 데이터베이스의 구조와 제약조건에 관한 전반적인 명세서라고 볼 수 있다.
 kotlin의 데이터 클래스라고 볼 수 있다.
+
+받은 데이터가 올바른 형태인지 파악하는 express-validator
+app.post('/auth/signup',[
+    body('email')
+    .isEmail()
+    .withMessage("please valid email"),
+    body('password')
+    .trim()
+    .isLength({min:6})
+],(req,res,next)=>{
+    다음과 같이 app.post()안에 들어간다.
+이 미들웨어에서 req에 결과를 넣어줌 이것을 
+validationResult(req)함수가 에러를 반환해준다.
+
+import를 require로 바꿔야 하는 경우도 있다.
+이럴 때는 package.json에서 type:'module'을 바꿔주어야 한다.
