@@ -46,3 +46,9 @@ validationResult(req)함수가 에러를 반환해준다.
 
 import를 require로 바꿔야 하는 경우도 있다.
 이럴 때는 package.json에서 type:'module'을 바꿔주어야 한다.
+
+next의 기능 : 다음 미들웨어로 넘겨준다.
+
+statuscode 500은 error response이다.
+
+몽고 디비와 연결하는 부분 안에 app.listen을 넣어 페이지가 열리면 자동적으로 데이터 베이스와 연결되도록 한다.
