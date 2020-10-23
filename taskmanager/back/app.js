@@ -53,7 +53,9 @@ app.post('/auth/signup', [
         });
 
         //
+        console.log(user);
         const result = await user.save();
+        console.log(result);
         res.status(201).json({
             message: "User created",
             user: result
@@ -74,7 +76,6 @@ app.use((error, req, res, next) => {
         message, data
     })
 })
-
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.vwjt7.mongodb.net/limproject?retryWrites=true&w=majority`)
     .then(() => {
