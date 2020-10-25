@@ -14,6 +14,13 @@ b-container 태그 안에 있는 것들은 양쪽에 마진이 생긴다.
 
 class="mt-4"은 margin top을 줄인 bootstarp 코드이다.
 
+axios를 사용해 http요청을 보낼 수 있다.
+
+async와 await는 자바스크립트의 비동기 처리 패턴 중 가장 최근에 나온 문법으로,
+기존의 비동기 처리 방식인 콜백함수와 프로미스의 단점을 보완한다.
+
+this.$router.push({path : '/login'})을 통해 push를 하면 처리가 끝나면 login으로 넘어간다.
+
 <backend>
 <회원 가입 구현하기.>
 fontend에서 post 방식으로 넘어온 email, password, name받으면(bodyparser사용)
@@ -58,3 +65,10 @@ model은 객체를 DB에 연결하는 것입니다.
 객체를 이용해서 DB명령을 가능하게 해줍니다. 
 model의 첫번째 인자는 model이름을 갖고, 두번째 인자는 model에서 사용될 Schema를 갖습니다.
 model을 사용해서 데이터를 데이터베이스에 저장하는 방법입니다.
+
+cors=브라우져에서 서버 요청을 보낼 때 포트, 도메인이 다르면 접근을 막는다.
+서버쪽에서 이것을 허락해주어야 한다.
+backend코드를 수정해야 한다.
+const cors = require('cors')
+app.use(cors());
+
