@@ -5,6 +5,13 @@ import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import{extend, localize} from 'vee-validate';
+import{required,email} from 'vee-validate/dist/rules';
+import en from 'vee-validate/dist/locale/en.json'
+
+localize('en',en)
+extend('email',email)
+extend('required',required)
 
 Vue.config.productionTip = false
 

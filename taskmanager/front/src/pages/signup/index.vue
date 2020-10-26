@@ -1,6 +1,11 @@
 <template>
   <div class="mt-4">
     <b-form @submit.prevent="onSubmit()">
+      <ValidationProvider
+          name="Name"
+          rules="required"
+          v-slot="{errors}"  
+      >
       <b-form-group
         id="input-group-1"
         label="Name:"
@@ -15,6 +20,8 @@
           placeholder="Enter name"
         ></b-form-input>
       </b-form-group>
+      <span>{{errors[0]}}</span>
+      </ValidationProvider>
 
     <b-form-group
         id="input-group-2"
@@ -57,7 +64,11 @@
 
 <script>
 import axios from 'axios';
+import {ValidationProvider} from 'vee-validate';
 export default {
+  components:{
+    ValidationProvider
+  },
     data(){
         return{
             form:{

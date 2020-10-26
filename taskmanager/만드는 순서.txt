@@ -21,6 +21,10 @@ async와 await는 자바스크립트의 비동기 처리 패턴 중 가장 최�
 
 this.$router.push({path : '/login'})을 통해 push를 하면 처리가 끝나면 login으로 넘어간다.
 
+vee-validator은 클라이언트 사이드에서 작동하는 validator로 
+회원가입시 누락되거나 잘못된 형식으로 입력된 값에 대한 경고 메세지를 바로 뛰워주는 기능을 한다.
+
+
 <backend>
 <회원 가입 구현하기.>
 fontend에서 post 방식으로 넘어온 email, password, name받으면(bodyparser사용)
