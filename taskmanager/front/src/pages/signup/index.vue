@@ -19,10 +19,15 @@
           required
           placeholder="Enter name"
         ></b-form-input>
+        <FormErrorMessage :errors="errors"/>
       </b-form-group>
-      <span>{{errors[0]}}</span>
       </ValidationProvider>
 
+    <ValidationProvider
+          name="Email"
+          rules="required|email"
+          v-slot="{errors}"  
+      >
     <b-form-group
         id="input-group-2"
         label="Email address:"
@@ -36,8 +41,15 @@
           required
           placeholder="Enter email"
         ></b-form-input>
+        <FormErrorMessage :errors="errors"/>
       </b-form-group>
+      </ValidationProvider>
 
+      <ValidationProvider
+          name="password"
+          rules="required|min:6"
+          v-slot="{errors}"  
+      >
       <b-form-group id="input-group-3" label="Your password:" label-for="input-3">
         <b-form-input
           id="input-3"
@@ -46,17 +58,26 @@
           required
           placeholder="Enter password"
         ></b-form-input>
+        <FormErrorMessage :errors="errors"/>
       </b-form-group>
+      </ValidationProvider>
 
-      <b-form-group id="input-group-4" label="Confirm password:" label-for="input-4">
+      <ValidationProvider
+          name="passwordconfirmation"
+          rules="required|min:6"
+          v-slot="{errors}"  
+      >
+      <b-form-group id="inp t-group-4" label="Confirm password:" label-for="input-4">
         <b-form-input
           id="input-4"
           type="password"
           v-model="form.ConfirmPassword"
           required
           placeholder="Enter password"
-        ></b-form-input>
+        ></b-form-input>      
+        <FormErrorMessage :errors="errors"/>
       </b-form-group>
+      </ValidationProvider>
       <b-button type="submit" variant="primary">Sign up</b-button>
     </b-form>
   </div>
@@ -65,9 +86,11 @@
 <script>
 import axios from 'axios';
 import {ValidationProvider} from 'vee-validate';
+import FormErrorMessage from '@/components/FormErrorMessage.vue'
 export default {
   components:{
-    ValidationProvider
+    ValidationProvider,
+    FormErrorMessage
   },
     data(){
         return{
