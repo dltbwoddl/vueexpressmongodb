@@ -2,6 +2,8 @@
   <div id="app">
     <div id="nav">
       <Navbar/>
+      {{$store.state.data}}
+        <button @click="change">change</button>
     </div>
     <b-container>
       <router-view/>
@@ -10,10 +12,15 @@
 </template>
 
 <script>  
-import Navbar from './components/Navbar'
+import Navbar from "./components/Navbar"
 export default {
-  components : {
+  components :{
     Navbar
+  },
+  methods: {
+    change(){
+      this.$store.dispatch('getdata');
+    }
   }
 }
 </script>

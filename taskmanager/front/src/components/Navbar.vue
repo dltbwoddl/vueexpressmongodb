@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand to="/">balmostory</b-navbar-brand>
+    <b-navbar-brand to="/">{{$store.state.data_1}}</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-
+name : 'Navbar'
 }
 </script>
 
