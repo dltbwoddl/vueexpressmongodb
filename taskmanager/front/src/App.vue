@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <Navbar/>
+      {{dataslice}}
       {{$store.state.data}}
         <button @click="change">change</button>
     </div>
@@ -17,9 +18,9 @@ export default {
   components :{
     Navbar
   },
-  methods: {
-    change(){
-      this.$store.dispatch('getdata');
+  computed:{
+    dataslice: function(){
+      return this.$store.state.data.slice(0,2);
     }
   }
 }

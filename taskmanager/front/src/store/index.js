@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    data : 'balmostory'
+    data : new Array('balmostory','hostory','jistory')
   },
   mutations: {
     changedata(state,datas){
@@ -22,5 +22,10 @@ export default new Vuex.Store({
     }
   },
   modules: {
+  },
+  getters:{
+    dataslice: (state) => { 
+      return state.data.slice(0,2) 
+    }
   }
 })
