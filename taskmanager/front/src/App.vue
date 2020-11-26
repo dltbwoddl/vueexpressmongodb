@@ -12,7 +12,12 @@
   <input type="text" id="lname" name="lname"><br><br>
   <input type="submit" value="Submit">
 </form>
-    
+<p v-if="balmo">story</p>
+<ol>
+  <li v-for="todo in todos" v-bind:key="todo.id">
+    {{todo.text}}
+  </li>
+</ol>
     </div>
     <b-container>
       <router-view/>
@@ -28,7 +33,13 @@ export default {
   },
   data(){
       return{ 
-        message:'hello'
+        message:'hello',
+        balmo : false,
+        todos: [
+      {id:"a", text: 'JavaScript 배우기' },
+      {id:"b", text: 'Vue 배우기' },
+      {id:"c", text: '무언가 멋진 것을 만들기' }
+    ]
         }
     },
   methods : {
