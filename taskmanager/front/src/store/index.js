@@ -16,6 +16,7 @@ export default new Vuex.Store({
   },
   actions: {
     getdata(context){
+      console.log(1)
       axios.get('http://localhost:3000').then((res)=>{
         context.commit('changedata',res['data'])
       })

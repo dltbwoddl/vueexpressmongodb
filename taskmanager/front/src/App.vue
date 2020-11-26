@@ -2,9 +2,17 @@
   <div id="app">
     <div id="nav">
       <Navbar/>
-      {{dataslice}}
+      {{message}}
       {{$store.state.data}}
-        <button @click="change">change</button>
+      {{message}}
+<form action="http://localhost:3000/" method='post'>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+    
     </div>
     <b-container>
       <router-view/>
@@ -18,9 +26,14 @@ export default {
   components :{
     Navbar
   },
-  computed:{
-    dataslice: function(){
-      return this.$store.state.data.slice(0,2);
+  data(){
+      return{ 
+        message:'hello'
+        }
+    },
+  methods : {
+    change: function(newmessage){
+        return this.message = newmessage;
     }
   }
 }
