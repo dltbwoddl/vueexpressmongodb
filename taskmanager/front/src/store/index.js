@@ -4,8 +4,7 @@ import axios from '../../node_modules/axios'
 
 Vue.use(Vuex)
 
-
-export default new Vuex.Store({
+const moduleA ={
   state: {
     data : new Array('balmostory','hostory','jistory')
   },
@@ -22,11 +21,17 @@ export default new Vuex.Store({
       })
     }
   },
-  modules: {
-  },
   getters:{
     dataslice: (state) => { 
       return state.data.slice(0,2) 
     }
   }
+}
+
+const store =  new Vuex.Store({
+  modules: {
+    a:moduleA
+  }
 })
+export default store
+console.log(store.getters.dataslice.a)

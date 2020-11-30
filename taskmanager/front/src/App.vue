@@ -3,7 +3,6 @@
     <div id="nav">
       <Navbar/>
       {{message}}
-      {{$store.state.data}}
       {{message}}
 <form action="http://localhost:3000/" method='post'>
   <label for="fname">First name:</label>

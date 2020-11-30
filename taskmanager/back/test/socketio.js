@@ -14,4 +14,8 @@ app.get('/',(req,res)=>{
 
 io.on('connection',(Socket)=>{
     console.log("클라이언트 접속")
+    Socket.on('name',(name)=>{
+        console.log(name)
+    })
+    // Socket.emit('hi',{message_1:'balmostory',message_2:'balmostory_2',message_3:'balmostory_3'})
 })
