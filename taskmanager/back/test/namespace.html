@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="hi_1"></div>
+    <div id="hi_2"></div>
+    <!-- socketio 라이브러리 로딩하는 cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+    <script>
+        var hi_1 = document.getElementById('hi_1')
+        var hi_2 = document.getElementById('hi_2')
+        var namespace = io('http://localhost:8080/balmostory');
+        namespace.on('connect', () => {
+            console.log('connect success')
+        })
+        namespace.on('message', (data) => {
+            hi_1.innerHTML = data
+        })
+
+        var namespace_2 = io('http://localhost:8080/balmostory_2')
+        namespace_2.on('connect', (Socket) => {
+            console.log('connect success_2')
+        })
+        namespace_2.on('message',(data)=>{
+            hi_2.innerHTML = data
+        })
+    </script>
+</body>
+
+</html>
